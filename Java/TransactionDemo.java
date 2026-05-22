@@ -11,5 +11,23 @@ public class TransactionDemo {
 
             //Turned off Auto Save.
             conn.setAutoCommit(false);
+
+            try {
+                //Orders and Orders Items.
+                //INSERT INTO ORDER
+                int ordersId = insertorders(conn, 101, "Rahul1", 5000.0);
+
+                //INSERT INTO ORDER ITEMS
+                insertordersitems(conn, ordersId, "Laptop1", 1, 16000.0);
+                conn.commit();
+            } catch (Exception e) {
+                e.printStackTrace();
+                conn.rollback();
+                System.out.println("OPERATION ROLLBACK");
+            } finally {
+                conn.setAutoCommit(true);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
     }
 }
