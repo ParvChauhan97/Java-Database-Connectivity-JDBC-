@@ -6,5 +6,10 @@ public class TransactionDemo {
     private static final String PASSWORD = "secrat";
 
     public static void main(String[] args) {
+        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            System.out.println("Connected to Database");
+
+            //Turned off Auto Save.
+            conn.setAutoCommit(false);
     }
 }
