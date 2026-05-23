@@ -31,3 +31,7 @@ public class TransactionDemo {
             e.printStackTrace();
     }
 }
+
+    private static void insertordersitems(Connection conn, int orders_id, String productName, int qty, double price) {
+        
+    }
