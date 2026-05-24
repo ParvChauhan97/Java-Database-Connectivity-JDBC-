@@ -48,5 +48,16 @@ public class TransactionDemo {
     }
 
     private static int insertorders(Connection conn, int customerId, String customerName, double price) {
-        
+        String sql = "INSERT INTO orders (user_id, costumer_name, total_ammount) VALUES (?, ?, ?)";
+        try(PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            pstmt.setInt(1, customerId);
+            pstmt.setString(2, customerName);
+            pstmt.setDouble(3, price);
+            int row = pstmt.executeUpdate();
+            System.out.println("INSERTED into orders: " + row);
+            
+            } 
+            catch (SQLException e) {
+              throw new RuntimeException();
+            }
     }
