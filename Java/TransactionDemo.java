@@ -46,3 +46,7 @@ public class TransactionDemo {
             throw new RuntimeException();
         }
     }
+
+    private static int insertorders(Connection conn, int customerId, String customerName, double price) {
+        
+    }
