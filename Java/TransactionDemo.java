@@ -55,6 +55,16 @@ public class TransactionDemo {
             pstmt.setDouble(3, price);
             int row = pstmt.executeUpdate();
             System.out.println("INSERTED into orders: " + row);
+
+            try(ResultSet rs = pstmt.getGeneratedKeys()) {
+                if(rs.next()) {
+                    int ordersId = rs.getInt(1);
+                    System.out.println("ORDER ID: " + ordersId);
+                    return ordersId;
+                } else {
+                    throw new SQLException("ORDER ID not Generated");
+                }
+            }
             
             } 
             catch (SQLException e) {
