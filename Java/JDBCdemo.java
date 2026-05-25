@@ -9,7 +9,7 @@ public class JDBCdemo {
     try(Connection conn = DriverManager.getConnection(URL , USER, PASSWORD);) {
             System.out.println("Connected to Database.");
            InsertVal(conn, "Ram", "ram@gmail.com");
-           
+           update(conn, 3, "Luckey", "luckey@gmail.com");
         } catch (SQLException e) {
             e.printStackTrace();
         }
