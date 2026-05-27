@@ -20,6 +20,8 @@ public class JDBCdemo {
     try(Statement stmt = conn.createStatement()) {
             int rows = stmt.executeUpdate(sql);
             System.out.println("INSERTED" + rows);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
   }
 }
