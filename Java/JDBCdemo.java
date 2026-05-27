@@ -14,4 +14,7 @@ public class JDBCdemo {
             e.printStackTrace();
         }
   }
+
+  private static void InsertVal(Connection conn, String name, String email) {
+  }
 }
