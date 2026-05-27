@@ -16,5 +16,6 @@ public class JDBCdemo {
   }
 
   private static void InsertVal(Connection conn, String name, String email) {
+    String sql = "INSERT INTO infor(name, email) VALUES (' " +  name + " ' , ' " + email + " ')";
   }
 }
