@@ -27,5 +27,15 @@ public class JDBCdemo {
 
    private static void selectmamber(Connection conn) {
       String sql = "SELECT * FROM infor";
+     try(Statement stmt = conn.createStatement()) {
+            ResultSet resultset = stmt.executeQuery(sql);
+            System.out.println("List:- ");
+            while(resultset.next()) {
+                int id = resultset.getInt("Id");
+                String name = resultset.getString("name");
+                String email = resultset.getString("email");
+                System.out.println(id + " : " + name + " : " + email);
+            }
+        }
    }
 }
