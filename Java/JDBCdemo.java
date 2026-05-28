@@ -24,4 +24,7 @@ public class JDBCdemo {
             throw new RuntimeException(e);
         }
   }
+
+   private static void selectmamber(Connection conn) {
+   }
 }
