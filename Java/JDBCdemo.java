@@ -36,6 +36,8 @@ public class JDBCdemo {
                 String email = resultset.getString("email");
                 System.out.println(id + " : " + name + " : " + email);
             }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
    }
 }
