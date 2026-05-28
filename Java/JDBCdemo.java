@@ -26,5 +26,6 @@ public class JDBCdemo {
   }
 
    private static void selectmamber(Connection conn) {
+      String sql = "SELECT * FROM infor";
    }
 }
