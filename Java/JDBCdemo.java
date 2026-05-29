@@ -40,4 +40,7 @@ public class JDBCdemo {
             throw new RuntimeException(e);
         }
    }
+
+    private static void update(Connection conn, int id, String name, String email) {
+    }
 }
