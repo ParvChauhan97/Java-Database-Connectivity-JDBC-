@@ -25,7 +25,6 @@ public class JDBCdemo {
             throw new RuntimeException(e);
         }
   }
-
   
    private static void selectmamber(Connection conn) {
       String sql = "SELECT * FROM infor";
@@ -43,6 +42,7 @@ public class JDBCdemo {
         }
    }
 
+  
     private static void update(Connection conn, int id, String name, String email) {
        String sql = "UPDATE infor SET name = ? , email = ? WHERE id = ? ";
     }
