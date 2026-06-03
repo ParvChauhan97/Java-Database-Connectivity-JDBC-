@@ -15,7 +15,6 @@ public class JDBCdemo {
             e.printStackTrace();
         }
   }
-
   
   private static void InsertVal(Connection conn, String name, String email) {
     String sql = "INSERT INTO infor(name, email) VALUES (' " +  name + " ' , ' " + email + " ')";
@@ -27,6 +26,7 @@ public class JDBCdemo {
         }
   }
 
+  
    private static void selectmamber(Connection conn) {
       String sql = "SELECT * FROM infor";
      try(Statement stmt = conn.createStatement()) {
