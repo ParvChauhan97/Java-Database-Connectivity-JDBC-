@@ -50,6 +50,8 @@ public class JDBCdemo {
             pstmt.setInt(3, id);
             int row = pstmt.executeUpdate();
             System.out.println("UPDATED" + row);
-        } 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
