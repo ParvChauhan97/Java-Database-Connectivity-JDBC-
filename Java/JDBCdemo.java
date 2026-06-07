@@ -58,6 +58,6 @@ public class JDBCdemo {
 
 
   private static  void delete(Connection conn, int id) {
-    
+     String sql = "DELETE FROM infor WHERE id = " +id;
   }
 }
