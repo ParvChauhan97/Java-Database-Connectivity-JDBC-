@@ -43,7 +43,6 @@ public class JDBCdemo {
   
     private static void update(Connection conn, int id, String name, String email) {
        String sql = "UPDATE infor SET name = ? , email = ? WHERE id = ? ";
-      
       try(PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setString(1, name);
             pstmt.setString(2, email);
