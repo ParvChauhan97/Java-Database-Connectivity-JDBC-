@@ -25,10 +25,8 @@ public class JDBCdemo {
         }
   }
 
-  
-   private static void selectmamber(Connection conn) {
+  private static void selectmamber(Connection conn) {
       String sql = "SELECT * FROM infor";
-     
      try(Statement stmt = conn.createStatement()) {
             ResultSet resultset = stmt.executeQuery(sql);
             System.out.println("List:- ");
