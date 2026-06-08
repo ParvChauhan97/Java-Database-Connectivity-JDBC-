@@ -8,10 +8,8 @@ public class TransactionDemo {
     public static void main(String[] args) {
         try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD)) {
             System.out.println("Connected to Database");
-
             //Turned off Auto Save.
             conn.setAutoCommit(false);
-
             try {
                 //Orders and Orders Items.
                 //INSERT INTO ORDER
@@ -41,7 +39,6 @@ public class TransactionDemo {
             pstmt.setDouble(4, price);
             int row = pstmt.executeUpdate();
             System.out.println("INSERTED into order items: " + row);
-
         } catch (Exception e) {
             throw new RuntimeException();
         }
@@ -55,7 +52,6 @@ public class TransactionDemo {
             pstmt.setDouble(3, price);
             int row = pstmt.executeUpdate();
             System.out.println("INSERTED into orders: " + row);
-
             try(ResultSet rs = pstmt.getGeneratedKeys()) {
                 if(rs.next()) {
                     int ordersId = rs.getInt(1);
@@ -64,10 +60,7 @@ public class TransactionDemo {
                 } else {
                     throw new SQLException("ORDER ID not Generated");
                 }
-            }
-            
-            } 
-            catch (SQLException e) {
+            } catch (SQLException e) {
               throw new RuntimeException();
             }
     }
