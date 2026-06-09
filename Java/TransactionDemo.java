@@ -14,7 +14,6 @@ public class TransactionDemo {
                 //Orders and Orders Items.
                 //INSERT INTO ORDER
                 int ordersId = insertorders(conn, 101, "Rahul1", 5000.0);
-
                 //INSERT INTO ORDER ITEMS
                 insertordersitems(conn, ordersId, "Laptop1", 1, 16000.0);
                 conn.commit();
