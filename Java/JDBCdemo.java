@@ -59,6 +59,8 @@ public class JDBCdemo {
     try(Statement stmt = conn.createStatement()) {
             int row = stmt.executeUpdate(sql);
             System.out.println("DELETED" + row);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
   }
 }
